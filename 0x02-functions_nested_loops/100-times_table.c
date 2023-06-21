@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * pront_time_table - prints the times table of the input, starting from zero
+ * print_time_table - prints the times table of the input, starting from zero
  * @n: Value of times table to be printed
  */
 
