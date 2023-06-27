@@ -1,11 +1,11 @@
 #include "main.h"
 
 /**
- * int _atoi - a function that converts string ino integers
+ * _atoi - function converts string into digits
+ * int _atoi - function converts string into digit
  * @s: string to be converted
  * Return: Always 0
  */
-
 int _atoi(char *s)
 {
 	int i, d, n, len, f, digit;
