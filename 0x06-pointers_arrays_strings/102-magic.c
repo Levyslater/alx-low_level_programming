@@ -6,7 +6,11 @@ int n;
 int a[5];
 int *p;
 
+<<<<<<< HEAD
 a[2] = 1024;
+=======
+a[2] = 61024;
+>>>>>>> 1cc8efba2081d1f5d559573de76089111d7bfc0a
 p = &n;
 /*
 * write your line of code here...
