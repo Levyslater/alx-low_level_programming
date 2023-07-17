@@ -2,7 +2,7 @@
 #define DOG_H
 
 /**
- * struct dog - a new type struct dog 
+ * struct dog - a new type struct dog
  * @name: name to define
  * @age: age to define
  * @owner: owner to define
@@ -16,4 +16,4 @@ struct dog
 
 };
 
-#endif 
+#endif
