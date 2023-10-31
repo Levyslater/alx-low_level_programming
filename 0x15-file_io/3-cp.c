@@ -17,8 +17,7 @@ int main(int argc, char **argv)
 {
 	int fd, to_fd;
 	ssize_t rbits;
-	char buf;
-	buf = malloc(sizeof(char) * READ_BUF_SIZE);
+	char buf[READ_BUF_SIZE];
 
 	if (argc != 3)
 		dprintf(STDERR_FILENO, USAGE), exit(97);
@@ -29,7 +28,7 @@ int main(int argc, char **argv)
 	if (to_fd == -1)
 		dprintf(STDERR_FILENO, ERR_NOWRITE, argv[2]), exit(99);
 	while ((rbits = read(fd, buf, READ_BUF_SIZE)) > 0)
-		if (write(fd, buf, rbits) != rbits)
+		if (write(to_fd, buf, rbits) != rbits)
 			dprintf(STDERR_FILENO, ERR_NOWRITE, argv[2]), exit(99);
 	if (rbits == -1)
 		dprintf(STDERR_FILENO, ERR_NOREAD, argv[1]), exit(98);
@@ -39,5 +38,5 @@ int main(int argc, char **argv)
 		dprintf(STDERR_FILENO, ERR_NOCLOSE, fd), exit(100);
 	if (to_fd)
 		dprintf(STDERR_FILENO, ERR_NOCLOSE, to_fd), exit(100);
-	return (EXIT_SUCCESS);
+	return (0);
 }
