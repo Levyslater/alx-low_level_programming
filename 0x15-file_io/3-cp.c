@@ -17,7 +17,8 @@ int main(int argc, char **argv)
 {
 	int fd, to_fd;
 	ssize_t rbits;
-	char buf[READ_BUF_SIZE];
+	char buf;
+	buf = malloc(sizeof(char) * READ_BUF_SIZE);
 
 	if (argc != 3)
 		dprintf(STDERR_FILENO, USAGE), exit(97);
